@@ -26,5 +26,27 @@ namespace Grupal
             FechaNacimiento = fechaNacimiento;
             NumeroTelefonico = numeroTelefonico;
         }
+        public void MostrarDetalles(List<Persona> personaList)
+        {
+            if (personaList.Count == 0)
+            {
+                Console.WriteLine("No hay Datos Añadidos");
+            }
+            else
+            {
+                foreach (var persona in personaList)
+                {
+                    persona.Mostrar();
+                    Console.WriteLine("");
+                }
+
+            }
+        }
+        public virtual void Mostrar()
+        {
+            Console.WriteLine($"Paciente No.{ID}\nNombre: {Nombre}\nDirección: {Direccion}\nFecha de Nacimiento: {FechaNacimiento}\nNúmero Telefónico: {NumeroTelefonico}");
+
+        }
+
     }
 }
