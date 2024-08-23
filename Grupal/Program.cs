@@ -1,6 +1,7 @@
 
 using Grupal;
-
+Console.BackgroundColor = ConsoleColor.Black;
+Console.ForegroundColor = ConsoleColor.Cyan;
 bool menu = true;
 
 List<Persona> listadoGeneralPersonas = new List<Persona>();
@@ -19,9 +20,47 @@ do
     }
     catch (FormatException ex)
     {
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Error! " + ex.Message);
         Console.ReadKey();
+        Console.ResetColor();
     }
+    catch (OverflowException ex)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Error! " + ex.Message);
+        Console.ReadKey();
+        Console.ResetColor();
+    }
+    catch (IndexOutOfRangeException ex)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Error! " + ex.Message);
+        Console.ReadKey();
+        Console.ResetColor();
+    }
+    catch (NullReferenceException ex)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Error! " + ex.Message);
+        Console.ReadKey();
+        Console.ResetColor();
+    }
+    catch (InvalidOperationException ex)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Error! " + ex.Message);
+        Console.ReadKey();
+        Console.ResetColor();
+    }
+    catch (DivideByZeroException ex)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("Error! " + ex.Message);
+        Console.ReadKey();
+        Console.ResetColor();
+    }
+
 } while (menu);
 
 
@@ -29,6 +68,8 @@ void Menu(List<Persona> personas, List<Tratamiento> listadoTratamientos, List<Ci
 {
     while (menu)
     {
+        Console.ForegroundColor = ConsoleColor.Cyan;
+
         Console.Clear();
         Console.WriteLine("_____________________________________________________");
         Console.WriteLine("             Hospital Pediatrico Alegría");
@@ -57,13 +98,18 @@ void Menu(List<Persona> personas, List<Tratamiento> listadoTratamientos, List<Ci
             case 5:
                 menu = false; break;
             default:
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Ingrese una opción valida"); Console.ReadKey();
+                Console.ForegroundColor = ConsoleColor.Cyan;
+
                 break;
         }
     }
 }
 void agregarPersona(List<Persona> personas)
 {
+    Console.ForegroundColor = ConsoleColor.Cyan;
+
     Console.Clear();
     Console.WriteLine("_____________________________________________________");
     Console.WriteLine("                    MENU AGREGAR");
@@ -84,11 +130,16 @@ void agregarPersona(List<Persona> personas)
         case 3:
             return;
         default:
-            Console.WriteLine("Ingrese una opción valida"); Console.ReadKey(); break;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Ingrese una opción valida"); Console.ReadKey();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            break;
     }
 }
 void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamientos, List<Cita_medica> listadoCitas)
 {
+    Console.ForegroundColor = ConsoleColor.Cyan;
+
     Console.Clear();
     Console.WriteLine("_____________________________________________________");
     Console.WriteLine("                    MENU LISTADOS");
@@ -136,7 +187,12 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
         case 5:
             return;
         default:
-            Console.WriteLine("Ingrese una opción valida"); 
+            Console.ForegroundColor = ConsoleColor.Red;
+
+            Console.WriteLine("Ingrese una opción valida");
+            Console.ReadKey();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
             break;
     }
     Console.ReadKey();
