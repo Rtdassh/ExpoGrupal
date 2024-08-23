@@ -8,7 +8,7 @@ do
     }
     catch (FormatException ex)
     {
-        Console.WriteLine("ERROR!, Datos Inválidos. " + ex.Message);
+        Console.WriteLine("Error! " + ex.Message);
         Console.ReadKey();
     }
 } while (menu);
