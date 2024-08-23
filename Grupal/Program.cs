@@ -7,11 +7,11 @@ bool menu = true;
 List<Persona> listadoGeneralPersonas = new List<Persona>();
 List<Tratamiento> listadoTratamientos = new List<Tratamiento>();
 List<Cita_medica> listadoCitas = new List<Cita_medica>();
-
+List<Medicamentos> listadoMedicamentos = new List<Medicamentos>();
 Medico medicoBase = new Medico("Z12", "Josu", "Mi casa", DateTime.Now, "55", "Cardiologo");
 Paciente pacienteBase= new Paciente("A12", "Josu", "Mi casa", DateTime.Now, "55", listadoTratamientos);
-
-
+Tratamiento tratamientoBase = new Tratamiento(1,  listadoMedicamentos, 33);
+Cita_medica citaMedicaBase = new Cita_medica(1,DateTime.Now,medicoBase,pacienteBase,"Paracetamol",tratamientoBase);
 do
 {
     try
@@ -159,7 +159,7 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
                 if (usuario is Paciente)
                 {
                     Console.WriteLine("---------------------------------------------------");
-                    Console.WriteLine($"ID: {usuario.Nombre} ");
+                    pacienteBase.MostrarDetalles(listadoGeneralPersonas);
                     Console.WriteLine("---------------------------------------------------");
                     Console.WriteLine();
                 }
@@ -172,17 +172,17 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
                 if (usuario is Medico) 
                 {
                     Console.WriteLine("---------------------------------------------------");
-                    Console.WriteLine($"ID: {usuario.Nombre} ");
+                    medicoBase.MostrarDetalles(listadoGeneralPersonas);
                     Console.WriteLine("---------------------------------------------------");
                     Console.WriteLine();
                 }               
             }
             break;
         case 3:
-            //listadoTratamientos
+            tratamientoBase.ListadoTratamientos(listadoTratamientos);
             break;
         case 4:
-            //listadoCitas
+            citaMedicaBase.ListadoCitas(listadoCitas);
             break;
         case 5:
             return;
@@ -197,4 +197,3 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
     }
     Console.ReadKey();
 }
-
