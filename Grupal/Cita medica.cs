@@ -50,8 +50,7 @@ namespace Grupal
                 Console.Write("ID paciente: ");
                 idPaciente = Console.ReadLine() ?? "";
                 busquedaPaciente = personas.FindIndex(n => n.GetID() == idPaciente)!;
-                Console.WriteLine(consulta);
-                Console.WriteLine(busquedaPaciente);
+
                 if (consulta != -1 && busquedaPaciente != -1) break;
                 else Console.WriteLine("El usuario ingresado no se ha encontrado, inténtelo de nuevo.");
                 Console.ReadKey();
