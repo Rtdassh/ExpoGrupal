@@ -1,3 +1,4 @@
+
 ﻿bool menu = true;
 
 do
@@ -109,3 +110,4 @@ void consultarListado()
             break;
     }
 }
+
