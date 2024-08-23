@@ -21,8 +21,9 @@ namespace Grupal
             Console.Clear();
             Console.WriteLine("--- AGREGAR PACIENTE ---");
             List<Tratamiento> ListadoNuevoPaciente = new List<Tratamiento>();
-            string nuevoId = CrearID(ref cantidadID);
-            Console.Write("Ingrese el nombre del nuevo paciente: ");
+            string nuevoId = CrearID();
+            Console.WriteLine("Ingrese el nombre del nuevo paciente:");
+
             string nuevoNombre = Console.ReadLine()??"";
             Console.WriteLine("Ingrese la dirección del paciente: ");
             string nuevaDireccion = Console.ReadLine() ?? "";
@@ -35,7 +36,7 @@ namespace Grupal
             Paciente agregarPaciente = new Paciente(nuevoId, nuevoNombre, nuevaDireccion, fechaNacimiento, nuevoNumero, ListadoNuevoPaciente);
             listaPacientes.Add(agregarPaciente);
         }
-        public override string CrearID(ref int cantidadID)
+        public override string CrearID()
         {
             cantidadID++;
             return "B" + cantidadID;
