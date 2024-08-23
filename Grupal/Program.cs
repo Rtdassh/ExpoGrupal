@@ -7,6 +7,10 @@ List<Persona> listadoGeneralPersonas = new List<Persona>();
 List<Tratamiento> listadoTratamientos = new List<Tratamiento>();
 List<Cita_medica> listadoCitas = new List<Cita_medica>();
 
+Medico medicoBase = new Medico("Z12", "Josu", "Mi casa", DateTime.Now, "55", "Cardiologo");
+Paciente pacienteBase= new Paciente("A12", "Josu", "Mi casa", DateTime.Now, "55", listadoTratamientos);
+
+
 do
 {
     try
@@ -74,7 +78,7 @@ void agregarPersona(List<Persona> personas)
             
             break;
         case 2:
-            //agregarMedico();
+            medicoBase.agregarMedico(personas);
             break;
         case 3:
             return;
@@ -100,8 +104,16 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
             //listadoPacientes
             break;
         case 2:
-            //listadoMedicos
-
+            foreach (Persona usuario in listadoGeneralPersonas)
+            {  
+                if (usuario is Medico) 
+                {
+                    Console.WriteLine("---------------------------------------------------");
+                    Console.WriteLine($"ID: {usuario.Nombre} ");
+                    Console.WriteLine("---------------------------------------------------");
+                    Console.WriteLine();
+                }               
+            }
             break;
         case 3:
             //listadoTratamientos
@@ -112,8 +124,9 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
         case 5:
             return;
         default:
-            Console.WriteLine("Ingrese una opción valida"); Console.ReadKey();
+            Console.WriteLine("Ingrese una opción valida"); 
             break;
     }
+    Console.ReadKey();
 }
 
