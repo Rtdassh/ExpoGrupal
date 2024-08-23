@@ -17,9 +17,9 @@ int Menu()
 {
     Console.Clear();
     Console.WriteLine("Hospital Pediatrico Alegría");
-    Console.WriteLine("1. ");
-    Console.WriteLine("2. ");
-    Console.WriteLine("3. ");
+    Console.WriteLine("1. Agregar persona");
+    Console.WriteLine("2. Programar cita");
+    Console.WriteLine("3. Consultar listados");
     Console.WriteLine("4. ");
     Console.WriteLine("5. ");
     Console.Write("Ingrese una opción del menú: ");
