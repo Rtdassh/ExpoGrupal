@@ -21,6 +21,7 @@ namespace Grupal
             cantidadID++;
             return "A" + cantidadID;
         }
+
         public void agregarMedico(List<Persona> listaMedicos)
         {
             Console.WriteLine("Ingrese el ID del medico");

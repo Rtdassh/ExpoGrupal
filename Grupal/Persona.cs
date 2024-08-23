@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,13 +11,17 @@ namespace Grupal
     {
         protected string ID { get; set; }
         public string Nombre { get; set; }
-        protected string Direccion{ get; set; }
+        protected string Direccion { get; set; }
 
         protected DateTime FechaNacimiento { get; set; }
 
         protected string NumeroTelefonico { get; set; }
 
         public virtual string CrearID(ref int cantidadID) => "";
+        public  string GetID() 
+        {
+            return ID;
+        }
 
         public Persona(string iD, string nombre, string direccion, DateTime fechaNacimiento, string numeroTelefonico)
         {

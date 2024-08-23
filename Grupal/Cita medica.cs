@@ -9,6 +9,7 @@ namespace Grupal
     internal class Cita_medica
     {
 
+        public int contador = 0;
         public int NumeroCita {  get; set; }
         protected DateTime Fecha { get; set; }
         public Medico Medico { get; set; }
@@ -26,27 +27,24 @@ namespace Grupal
             Tratamientos = tratamientos;
         }
 
-        public void AgregarCita(List<Cita_medica> listaCitas)
+        public string CrearID(ref int cantidadID)
+        {
+            cantidadID++;
+            return "C" + cantidadID;
+        }
+
+        public void AgregarCita(List<Persona> personas, List<Tratamiento> listadoTratamientos, List<Cita_medica> listadoCitas)
         {
             Console.Clear();
             Console.WriteLine("--- AGENDAR CITA ---");
-            Console.Write("Número de cita: ");
-            int numeroCita = int.Parse(Console.ReadLine()??"");
-            Cita_medica? buscarNumero = listaCitas.Find(c => c.NumeroCita == numeroCita);
-            if (buscarNumero == null)
-            {
-                Console.Write("Fecha de cita: ");
-                DateTime fecha = DateTime.Now;
-                Console.Write("ID Médico: ");
-                int idMedico = int.Parse(Console.ReadLine()??"");
-               
-            }
-            else
-            {
-                Console.WriteLine("\nError: Ya existe una cita con ese número.");
-                Console.WriteLine("Presione enter para continuar...");
-                Console.ReadKey();
-            }
+            string nuevoID = CrearID(ref contador);
+            Console.Write("Fecha de cita: ");
+            DateTime fecha = DateTime.Now;
+            Console.Write("ID Médico: ");
+            string idMedico = Console.ReadLine()??"";
+            Persona? consulta = personas.Find(n => n.GetID() == idMedico);
+            
+          
 
         }
 
