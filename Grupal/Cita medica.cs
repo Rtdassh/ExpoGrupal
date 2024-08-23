@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Grupal
@@ -48,8 +49,9 @@ namespace Grupal
                 Console.WriteLine("Presione enter para continuar...");
                 Console.ReadKey();
             }
-
+            Console.WriteLine();
         }
+        
         
     }
 }
