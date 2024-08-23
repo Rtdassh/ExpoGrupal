@@ -8,6 +8,7 @@ namespace Grupal
 {
     internal class Medicamentos
     {
+        
         public string Descripcion { get; set; }
         public string Duracion { get; set; }
 
