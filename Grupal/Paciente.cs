@@ -45,7 +45,16 @@ namespace Grupal
         public override void Mostrar()
         {
             base.Mostrar();
-            Console.Write($"Listado Paciente: {ListadoPaciente}");
+            if(ListadoPaciente.Count == 0)
+            {
+                string listado = "Tratamientos no asignados";
+                Console.Write($"Listado Paciente: {listado}");
+            }
+            else
+            {
+                Console.Write($"Listado Paciente: {ListadoPaciente}");
+            }
+         
         }
     }
 }

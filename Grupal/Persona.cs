@@ -38,6 +38,7 @@ namespace Grupal
             {
                 foreach (var persona in personaList)
                 {
+                    
                     persona.Mostrar();
                     Console.WriteLine("");
                     Console.WriteLine("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
