@@ -40,6 +40,7 @@ namespace Grupal
                 {
                     persona.Mostrar();
                     Console.WriteLine("");
+                    Console.WriteLine("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
                 }
 
             }
