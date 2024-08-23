@@ -22,10 +22,9 @@ namespace Grupal
             Console.WriteLine("--- AGREGAR PACIENTE ---");
             List<Tratamiento> ListadoNuevoPaciente = new List<Tratamiento>();
             string nuevoId = CrearID();
-            Console.WriteLine("Ingrese el nombre del nuevo paciente:");
-
+            Console.Write("Ingrese el nombre del nuevo paciente: ");
             string nuevoNombre = Console.ReadLine()??"";
-            Console.WriteLine("Ingrese la dirección del paciente: ");
+            Console.Write("Ingrese la dirección del paciente: ");
             string nuevaDireccion = Console.ReadLine() ?? "";
             Console.Write("Ingrese el año de nacimiento: ");
             int nuevaFecha = int.Parse(Console.ReadLine() ?? "");

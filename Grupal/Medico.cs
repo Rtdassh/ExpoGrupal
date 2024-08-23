@@ -35,13 +35,13 @@ namespace Grupal
             string nombreMedico = Console.ReadLine() ?? "";
             Console.Write("Ingrese la dirección del médico: ");
             string direccionMedico = Console.ReadLine() ?? "";
-            Console.Write("Ingrese la fecha de nacimiento: ");
-            DateTime fechaMedico = DateTime.Now;
+            int nuevaFecha = int.Parse(Console.ReadLine() ?? "");
+            DateTime fechaNacimiento = new DateTime(nuevaFecha);
             Console.Write("Ingrese el número de teléfono: ");
             string numeroMedico = Console.ReadLine() ?? "";
             Console.Write("Ingrese la especialidad del médico: ");
             string especialidad = Console.ReadLine() ?? "";
-            Medico agregarMedico = new Medico(idMedico, nombreMedico, direccionMedico, fechaMedico, numeroMedico, especialidad);
+            Medico agregarMedico = new Medico(idMedico, nombreMedico, direccionMedico, fechaNacimiento, numeroMedico, especialidad);
             listaMedicos.Add(agregarMedico);
         }
         public override void Mostrar()
