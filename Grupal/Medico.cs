@@ -16,7 +16,7 @@ namespace Grupal
             Especialidad = especialidad;
         }
 
-        public override string CrearID(int cantidadID)
+        public override string CrearID(ref int cantidadID)
         {
             cantidadID++;
             return "A" + cantidadID;

@@ -75,7 +75,7 @@ void agregarPersona(List<Persona> personas)
     switch (optionSwitch)
     {
         case 1:
-            
+            pacienteBase.agregarPaciente(personas);
             break;
         case 2:
             medicoBase.agregarMedico(personas);
@@ -101,7 +101,17 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
     switch (optionSwitch)
     {
         case 1:
-            //listadoPacientes
+            foreach (Persona usuario in listadoGeneralPersonas)
+            {
+                if (usuario is Paciente)
+                {
+                    Console.WriteLine("---------------------------------------------------");
+                    Console.WriteLine($"ID: {usuario.ID} ");
+                    Console.WriteLine("---------------------------------------------------");
+                    Console.WriteLine();
+                }
+            }
+            Console.WriteLine("hola");
             break;
         case 2:
             foreach (Persona usuario in listadoGeneralPersonas)
