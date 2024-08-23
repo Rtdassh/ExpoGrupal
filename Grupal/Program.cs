@@ -71,7 +71,7 @@ void agregarPersona(List<Persona> personas)
     switch (optionSwitch)
     {
         case 1:
-            //agregarPaciente();
+            
             break;
         case 2:
             //agregarMedico();

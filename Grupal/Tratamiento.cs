@@ -25,7 +25,7 @@ namespace Grupal
         {
             Console.WriteLine("--- Tratamiento ---");
             Console.Write("ID Cita Médica: ");
-            int idCita = int.Parse(Console.ReadLine());
+            int idCita = int.Parse(Console.ReadLine()??"");
             //Cita_medica citaFind = citaMedicaList.Find(c => c.ID = idCita);
             //if (citaFind != null)
             //{
@@ -43,10 +43,10 @@ namespace Grupal
             do
             {
                 Console.Write("Descripción: ");
-                string descripcion = Console.ReadLine();
+                string descripcion = Console.ReadLine() ?? "";
                 Console.Write("Duración: ");
-                string duracion = Console.ReadLine();
-                Medicamentos medicamentoFind = medicamentoList.Find(p => p.Descripcion == descripcion);
+                string duracion = Console.ReadLine() ?? "";
+                Medicamentos? medicamentoFind = medicamentoList.Find(p => p.Descripcion == descripcion);
                 if (medicamentoFind != null)
                 {
                     medicamentoList.Add(new Medicamentos(descripcion, duracion));
@@ -57,7 +57,7 @@ namespace Grupal
                     Console.WriteLine("Medicamento ya indicado");
                 }
                 Console.WriteLine("\nAgregar Otro Medicamento (s/n): ");
-                string opcion = Console.ReadLine().ToLower();
+                string opcion = Console.ReadLine() ?? "".ToLower();
                 bool runDos = true;
                 do
                 {
@@ -84,8 +84,8 @@ namespace Grupal
         public void MostrarTratamiento(List<Tratamiento> tratamientoList, List<Medicamentos> medicamentoList)
         {
             Console.Write("ID del tratamiento: ");
-            int idTratamiento = int.Parse(Console.ReadLine());
-            Tratamiento tratamientoFind = tratamientoList.Find(t => t.IDTratamiento == idTratamiento);
+            int idTratamiento = int.Parse(Console.ReadLine() ?? "");
+            Tratamiento? tratamientoFind = tratamientoList.Find(t => t.IDTratamiento == idTratamiento);
             if (tratamientoFind != null)
             {
                 Console.WriteLine($"\n--- Tratamiento No.{idTratamiento} ---\nCita Médica: {tratamientoFind.CitaMedica}");
