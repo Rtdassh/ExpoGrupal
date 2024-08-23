@@ -114,8 +114,8 @@ void agregarPersona(List<Persona> personas)
     Console.WriteLine("_____________________________________________________");
     Console.WriteLine("                    MENU AGREGAR");
     Console.WriteLine("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
-    Console.WriteLine("1. Agregar paciente");
-    Console.WriteLine("2. Agregar medico");
+    Console.WriteLine("1. Agregar Paciente");
+    Console.WriteLine("2. Agregar Médico");
     Console.WriteLine("3. Salir");
     Console.Write("Ingrese una opción del menú: ");
     int optionSwitch = Convert.ToInt32(Console.ReadLine());
@@ -144,10 +144,10 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
     Console.WriteLine("_____________________________________________________");
     Console.WriteLine("                    MENU LISTADOS");
     Console.WriteLine("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
-    Console.WriteLine("1. Listado de pacientes");
-    Console.WriteLine("2. Listado de medicos");
-    Console.WriteLine("3. Listado de tratamientos");
-    Console.WriteLine("4. Listado de citas");
+    Console.WriteLine("1. Listado de Pacientes");
+    Console.WriteLine("2. Listado de Médicos");
+    Console.WriteLine("3. Listado de Tratamientos");
+    Console.WriteLine("4. Listado de Citas");
     Console.WriteLine("5. Salir");
     Console.Write("Ingrese una opción del menú: ");
     int optionSwitch = Convert.ToInt32(Console.ReadLine());
