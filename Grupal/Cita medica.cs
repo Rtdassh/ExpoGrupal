@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace Grupal
 {
-    public class Cita_medica
+    internal class Cita_medica
     {
 
-        protected int NumeroCita {  get; set; }
+        public int NumeroCita {  get; set; }
         protected DateTime Fecha { get; set; }
         public Medico Medico { get; set; }
         public Paciente Paciente { get; set; }
         protected string Diagnostico { get; set; }
         protected List<Tratamiento> Tratamientos { get; set; }
-
+        
+        public Cita_medica(List<Cita_medica> listaCitas) { }
         public Cita_medica(int numeroCita, DateTime fecha, Medico medico, Paciente paciente, string diagnostico, List<Tratamiento> tratamientos)
         {
             NumeroCita = numeroCita;
@@ -25,5 +26,30 @@ namespace Grupal
             Diagnostico = diagnostico;
             Tratamientos = tratamientos;
         }
+
+        public void AgregarCita(List<Cita_medica> listaCitas)
+        {
+            Console.Clear();
+            Console.WriteLine("--- AGENDAR CITA ---");
+            Console.Write("Número de cita: ");
+            int numeroCita = int.Parse(Console.ReadLine());
+            Cita_medica buscarNumero = listaCitas.Find(c => c.NumeroCita == numeroCita);
+            if (buscarNumero == null)
+            {
+                Console.Write("Fecha de cita: ");
+                DateTime fecha = DateTime.Now;
+                Console.Write("ID Médico: ");
+                int idMedico = int.Parse(Console.ReadLine());
+                
+            }
+            else
+            {
+                Console.WriteLine("\nError: Ya existe una cita con ese número.");
+                Console.WriteLine("Presione enter para continuar...");
+                Console.ReadKey();
+            }
+
+        }
+        
     }
 }
