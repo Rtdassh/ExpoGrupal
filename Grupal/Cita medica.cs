@@ -15,37 +15,42 @@ namespace Grupal
         public Medico Medico { get; set; }
         public Paciente Paciente { get; set; }
         protected string Diagnostico { get; set; }
-        protected Tratamiento Tratamientos { get; set; }
 
-       public Cita_medica(int numeroCita, DateTime fecha, Medico medico, Paciente paciente, string diagnostico, Tratamiento tratamientos)
+       public Cita_medica(int numeroCita, DateTime fecha, Medico medico, Paciente paciente, string diagnostico)
         {
             NumeroCita = numeroCita;
             Fecha = fecha;
             Medico = medico;
             Paciente = paciente;
             Diagnostico = diagnostico;
-            Tratamientos = tratamientos;
         }
 
-        public string CrearID(ref int cantidadID)
+        public int CrearID(ref int cantidadID)
         {
             cantidadID++;
-            return "C" + cantidadID;
+            return cantidadID;
         }
 
         public void AgregarCita(List<Persona> personas, List<Tratamiento> listadoTratamientos, List<Cita_medica> listadoCitas)
         {
             Console.Clear();
             Console.WriteLine("--- AGENDAR CITA ---");
-            string nuevoID = CrearID(ref contador);
+            int nuevoID = CrearID(ref contador);
             Console.Write("Fecha de cita: ");
             DateTime fecha = DateTime.Now;
             Console.Write("ID Médico: ");
             string idMedico = Console.ReadLine()??"";
-            Persona? consulta = personas.Find(n => n.GetID() == idMedico);
-            
-          
+            Persona? consulta = personas.Find(n => n.GetID() == idMedico)!;
 
+            Console.Write("ID paciente: ");
+            string idPaciente = Console.ReadLine() ?? "";
+            Persona? busquedaPaciente = personas.Find(n => n.GetID() == idPaciente)!;
+
+            Console.Write("Diagnóstico: ");
+            string diagnostico = Console.ReadLine() ?? "";
+
+            Cita_medica nuevaCita = new Cita_medica(nuevoID, fecha, (Medico)consulta, (Paciente)busquedaPaciente, diagnostico);
+            listadoCitas.Add(nuevaCita);
         }
         public void ListadoCitas(List<Cita_medica> listaCitas)
         {
@@ -58,7 +63,6 @@ namespace Grupal
                 Console.WriteLine("Médico: " + cita.Medico);
                 Console.WriteLine("Paciente: " + cita.Paciente);
                 Console.WriteLine("Diagnóstico: " + cita.Diagnostico);
-                Console.WriteLine("Tratamiento: " + cita.Tratamientos);
             }
         }
     }

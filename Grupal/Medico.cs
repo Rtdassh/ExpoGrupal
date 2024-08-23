@@ -22,10 +22,10 @@ namespace Grupal
             return "A" + cantidadID;
         }
 
+
         public void agregarMedico(List<Persona> listaMedicos)
         {
-            Console.WriteLine("Ingrese el ID del medico");
-            string idMedico = Console.ReadLine() ?? "";
+            string idMedico = CrearID(ref cantidadID);
             Console.WriteLine("Ingrese el nombre del medico");
             string nombreMedico = Console.ReadLine() ?? "";
             Console.WriteLine("Ingrese la dirección del medico");

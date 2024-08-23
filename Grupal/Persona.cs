@@ -18,10 +18,7 @@ namespace Grupal
         protected string NumeroTelefonico { get; set; }
 
         public virtual string CrearID(ref int cantidadID) => "";
-        public  string GetID() 
-        {
-            return ID;
-        }
+        public virtual string GetID() => ID;
 
         public Persona(string iD, string nombre, string direccion, DateTime fechaNacimiento, string numeroTelefonico)
         {
