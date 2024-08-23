@@ -197,4 +197,3 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
     }
     Console.ReadKey();
 }
-
