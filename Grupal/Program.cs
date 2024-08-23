@@ -93,7 +93,7 @@ void Menu(List<Persona> personas, List<Tratamiento> listadoTratamientos, List<Ci
                 consultarListado(personas, listadoTratamientos, listadoCitas);
                 break;
             case 4:
-                //agregarTratamiento();
+                tratamientoBase.ProgramarTratamiento(listadoCitas,listadoTratamientos,listadoMedicamentos);
                 break;
             case 5:
                 menu = false; break;
@@ -164,7 +164,6 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
                     Console.WriteLine();
                 }
             }
-            Console.WriteLine("hola");
             break;
         case 2:
             foreach (Persona usuario in listadoGeneralPersonas)
