@@ -1,11 +1,17 @@
 
-﻿bool menu = true;
+using Grupal;
+
+bool menu = true;
+
+List<Persona> listadoGeneralPersonas = new List<Persona>();
+List<Tratamiento> listadoTratamientos = new List<Tratamiento>();
+List<Cita_medica> listadoCitas = new List<Cita_medica>();
 
 do
 {
     try
     {
-        Menu();
+        Menu(listadoGeneralPersonas, listadoTratamientos, listadoCitas);
     }
     catch (FormatException ex)
     {
@@ -15,7 +21,7 @@ do
 } while (menu);
 
 
-void Menu()
+void Menu(List<Persona> personas, List<Tratamiento> listadoTratamientos, List<Cita_medica> listadoCitas)
 {
     while (menu)
     {
@@ -33,13 +39,13 @@ void Menu()
         switch (optionSwitch)
         {
             case 1:
-                agregarPersona();
+                agregarPersona(personas);
                 break;
             case 2:
                 //programarCita();
                 break;
             case 3:
-                consultarListado();
+                consultarListado(personas, listadoTratamientos, listadoCitas);
                 break;
             case 4:
                 //agregarTratamiento();
@@ -52,7 +58,7 @@ void Menu()
         }
     }
 }
-void agregarPersona()
+void agregarPersona(List<Persona> personas)
 {
     Console.Clear();
     Console.WriteLine("_____________________________________________________");
@@ -65,7 +71,7 @@ void agregarPersona()
     switch (optionSwitch)
     {
         case 1:
-            //agregarPacinete();
+            //agregarPaciente();
             break;
         case 2:
             //agregarMedico();
@@ -76,7 +82,7 @@ void agregarPersona()
             Console.WriteLine("Ingrese una opción valida"); Console.ReadKey(); break;
     }
 }
-void consultarListado()
+void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamientos, List<Cita_medica> listadoCitas)
 {
     Console.Clear();
     Console.WriteLine("_____________________________________________________");

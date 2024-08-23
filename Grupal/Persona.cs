@@ -8,8 +8,7 @@ namespace Grupal
 {
     internal class Persona
     {
-        public List<Persona> listadoGeneralPersonas = new List<Persona>();
-        private string ID { get; set; }
+        protected string ID { get; set; }
         public string Nombre { get; set; }
         protected string Direccion{ get; set; }
 
@@ -17,9 +16,9 @@ namespace Grupal
 
         protected string NumeroTelefonico { get; set; }
 
-        
+        public virtual string CrearID(int cantidadID) => "";
 
-         public Persona(string iD, string nombre, string direccion, DateTime fechaNacimiento, string numeroTelefonico)
+        public Persona(string iD, string nombre, string direccion, DateTime fechaNacimiento, string numeroTelefonico)
         {
             ID = iD;
             Nombre = nombre;
