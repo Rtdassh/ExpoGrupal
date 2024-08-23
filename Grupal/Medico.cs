@@ -29,7 +29,7 @@ namespace Grupal
 
             Console.Clear();
             Console.WriteLine("--- AGREGAR MÉDICO ---");
-            string idMedico = CrearID(ref cantidadID);
+            string idMedico = CrearID();
             Console.Write("Ingrese el nombre del médico: ");
 
             string nombreMedico = Console.ReadLine() ?? "";

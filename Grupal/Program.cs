@@ -8,8 +8,8 @@ List<Persona> listadoGeneralPersonas = new List<Persona>();
 List<Tratamiento> listadoTratamientos = new List<Tratamiento>();
 List<Cita_medica> listadoCitas = new List<Cita_medica>();
 List<Medicamentos> listadoMedicamentos = new List<Medicamentos>();
-Medico medicoBase = new Medico("Z12", "Josu", "Mi casa", DateTime.Now, "55", "Cardiologo");
-Paciente pacienteBase= new Paciente("A12", "Josu", "Mi casa", DateTime.Now, "55", listadoTratamientos);
+Medico medicoBase = new Medico("aaa", "Josu", "Mi casa", DateTime.Now, "55", "Cardiologo");
+Paciente pacienteBase= new Paciente("bbb", "Josu", "Mi casa", DateTime.Now, "55", listadoTratamientos);
 Tratamiento tratamientoBase = new Tratamiento(1,  listadoMedicamentos, 33);
 Cita_medica citaMedicaBase = new Cita_medica(1,DateTime.Now,"medicoBase","pacienteBase","Paracetamol");
 do
