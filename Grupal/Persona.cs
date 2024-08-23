@@ -17,9 +17,9 @@ namespace Grupal
 
         protected string NumeroTelefonico { get; set; }
 
-       
+        
 
-        public Persona(string iD, string nombre, string direccion, DateTime fechaNacimiento, string numeroTelefonico)
+         public Persona(string iD, string nombre, string direccion, DateTime fechaNacimiento, string numeroTelefonico)
         {
             ID = iD;
             Nombre = nombre;

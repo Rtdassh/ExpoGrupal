@@ -14,16 +14,16 @@ namespace Grupal
         public Medico Medico { get; set; }
         public Paciente Paciente { get; set; }
         protected string Diagnostico { get; set; }
-        protected List<Tratamiento> Tratamientossss { get; set; }
+        protected Tratamiento Tratamientos { get; set; }
 
-       public Cita_medica(int numeroCita, DateTime fecha, Medico medico, Paciente paciente, string diagnostico, List<Tratamiento> tratamientossss)
+       public Cita_medica(int numeroCita, DateTime fecha, Medico medico, Paciente paciente, string diagnostico, Tratamiento tratamientos)
         {
             NumeroCita = numeroCita;
             Fecha = fecha;
             Medico = medico;
             Paciente = paciente;
             Diagnostico = diagnostico;
-            Tratamientossss = tratamientossss;
+            Tratamientos = tratamientos;
         }
        
     }
