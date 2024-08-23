@@ -11,7 +11,7 @@ List<Medicamentos> listadoMedicamentos = new List<Medicamentos>();
 Medico medicoBase = new Medico("Z12", "Josu", "Mi casa", DateTime.Now, "55", "Cardiologo");
 Paciente pacienteBase= new Paciente("A12", "Josu", "Mi casa", DateTime.Now, "55", listadoTratamientos);
 Tratamiento tratamientoBase = new Tratamiento(1,  listadoMedicamentos, 33);
-
+Cita_medica citaMedicaBase = new Cita_medica(1,DateTime.Now,medicoBase,pacienteBase,"Paracetamol",tratamientoBase);
 do
 {
     try
@@ -179,10 +179,10 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
             }
             break;
         case 3:
-        
+            tratamientoBase.ListadoTratamientos(listadoTratamientos);
             break;
         case 4:
-            //listadoCitas
+            citaMedicaBase.ListadoCitas(listadoCitas);
             break;
         case 5:
             return;

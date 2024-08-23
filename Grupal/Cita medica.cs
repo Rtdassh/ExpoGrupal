@@ -49,6 +49,19 @@ namespace Grupal
             }
 
         }
-
+        public void ListadoCitas(List<Cita_medica> listaCitas)
+        {
+            Console.Clear();
+            foreach (var cita in listaCitas)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Número de cita: " + cita.NumeroCita);
+                Console.WriteLine("Fecha: " + cita.Fecha);
+                Console.WriteLine("Médico: " + cita.Medico);
+                Console.WriteLine("Paciente: " + cita.Paciente);
+                Console.WriteLine("Diagnóstico: " + cita.Diagnostico);
+                Console.WriteLine("Tratamiento: " + cita.Tratamientos);
+            }
+        }
     }
 }
