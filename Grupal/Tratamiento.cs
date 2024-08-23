@@ -97,7 +97,18 @@ namespace Grupal
                 Console.WriteLine("Hospital Pediátrico Alegría");
             }
         }
-        
+
+        public void ListadoTratamientos(List<Tratamiento> tratamientoList)
+        {
+            Console.Clear();
+            foreach (var tratamiento in tratamientoList)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("ID del tratamiento: " + tratamiento.IDTratamiento);
+                Console.WriteLine("Medicamentos recetados: " + tratamiento.Medicamento);
+                Console.WriteLine("Cita médica: " + tratamiento.CitaMedica);
+            }
+        }
 
     }
 }
