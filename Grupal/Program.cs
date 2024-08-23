@@ -154,28 +154,18 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
     switch (optionSwitch)
     {
         case 1:
-            foreach (Persona usuario in listadoGeneralPersonas)
-            {
-                if (usuario is Paciente)
-                {
+          
                     Console.WriteLine("---------------------------------------------------");
                     pacienteBase.MostrarDetalles(listadoGeneralPersonas);
                     Console.WriteLine("---------------------------------------------------");
                     Console.WriteLine();
-                }
-            }
             break;
         case 2:
-            foreach (Persona usuario in listadoGeneralPersonas)
-            {  
-                if (usuario is Medico) 
-                {
+
                     Console.WriteLine("---------------------------------------------------");
                     medicoBase.MostrarDetalles(listadoGeneralPersonas);
                     Console.WriteLine("---------------------------------------------------");
                     Console.WriteLine();
-                }               
-            }
             break;
         case 3:
             tratamientoBase.ListadoTratamientos(listadoTratamientos);
