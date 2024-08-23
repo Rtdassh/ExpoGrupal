@@ -159,7 +159,7 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
                 if (usuario is Paciente)
                 {
                     Console.WriteLine("---------------------------------------------------");
-                    Console.WriteLine($"ID: {usuario.Nombre} ");
+                    pacienteBase.MostrarDetalles(listadoGeneralPersonas);
                     Console.WriteLine("---------------------------------------------------");
                     Console.WriteLine();
                 }
@@ -172,7 +172,7 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
                 if (usuario is Medico) 
                 {
                     Console.WriteLine("---------------------------------------------------");
-                    Console.WriteLine($"ID: {usuario.Nombre} ");
+                    medicoBase.MostrarDetalles(listadoGeneralPersonas);
                     Console.WriteLine("---------------------------------------------------");
                     Console.WriteLine();
                 }               

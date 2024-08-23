@@ -40,6 +40,10 @@ namespace Grupal
             return "B" + cantidadID;
         }
 
-
+        public override void Mostrar()
+        {
+            base.Mostrar();
+            Console.Write($"Listado Paciente: {ListadoPaciente}");
+        }
     }
 }
