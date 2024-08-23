@@ -71,6 +71,7 @@ void agregarPersona(List<Persona> personas)
     Console.WriteLine("1. Agregar paciente");
     Console.WriteLine("2. Agregar medico");
     Console.WriteLine("3. Salir");
+    Console.Write("Ingrese una opción del menú: ");
     int optionSwitch = Convert.ToInt32(Console.ReadLine());
     switch (optionSwitch)
     {
@@ -97,6 +98,7 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
     Console.WriteLine("3. Listado de tratamientos");
     Console.WriteLine("4. Listado de citas");
     Console.WriteLine("5. Salir");
+    Console.Write("Ingrese una opción del menú: ");
     int optionSwitch = Convert.ToInt32(Console.ReadLine());
     switch (optionSwitch)
     {
