@@ -40,11 +40,30 @@ namespace Grupal
             cantidadID++;
             return "B" + cantidadID;
         }
-
+        public override void MostrarDetalles(List<Persona> personaList)
+        {
+            foreach (var persona in personaList)
+            {
+                if (persona is Paciente)
+                {
+                    persona.Mostrar();
+                    Console.WriteLine("");
+                    Console.WriteLine("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
+                }
+            }
+        }
         public override void Mostrar()
         {
             base.Mostrar();
-            Console.Write($"Listado Paciente: {ListadoPaciente}");
+            foreach (Tratamiento tratamiento in ListadoPaciente)
+            {
+                for (int i = 0; i < ListadoPaciente.Count; i++)
+                {
+                    Console.WriteLine($"Tratamiento: {tratamiento.Medicamento[0].Descripcion}");
+                }
+            }
         }
+        public override List<Tratamiento> GetList() => ListadoPaciente;
+
     }
 }

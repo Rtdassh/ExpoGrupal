@@ -96,7 +96,7 @@ void Menu(List<Persona> personas, List<Tratamiento> listadoTratamientos, List<Ci
                 consultarListado(personas, listadoTratamientos, listadoCitas);
                 break;
             case 4:
-                tratamientoBase.ProgramarTratamiento(listadoCitas,listadoTratamientos,listadoMedicamentos);
+                tratamientoBase.ProgramarTratamiento(listadoCitas,listadoTratamientos,listadoMedicamentos, listadoGeneralPersonas);
                 break;
             case 5:
                 menu = false; break;

@@ -21,16 +21,20 @@ namespace Grupal
             CitaMedica = citaMedica;
         }
         private static int contadorID = 1;
-        public void ProgramarTratamiento(List<Cita_medica> citaMedicaList, List<Tratamiento> tratamientoList, List<Medicamentos> medicamentosList) 
+        public void ProgramarTratamiento(List<Cita_medica> citaMedicaList, List<Tratamiento> tratamientoList, List<Medicamentos> medicamentosList, List<Persona> personas) 
         {
             Console.WriteLine("--- Tratamiento ---");
             Console.Write("ID Cita Médica: ");
             int idCita = int.Parse(Console.ReadLine()??"");
             Cita_medica? citaFind = citaMedicaList.Find(c => c.NumeroCita == idCita);
             if (citaFind != null)
-            {
+            {             
                 agregarmedicamentos(medicamentosList);
-                tratamientoList.Add(new Tratamiento(contadorID++, medicamentosList, idCita));
+                Tratamiento nuevoTratamiento = new Tratamiento(contadorID++, medicamentosList, idCita);               
+                int busquedaPaciente = citaMedicaList.FindIndex(n => n.Paciente == citaFind.Paciente)!;
+                personas[busquedaPaciente].GetList().Add(nuevoTratamiento);
+                tratamientoList.Add(nuevoTratamiento);
+
             }
             else
             {
@@ -56,11 +60,12 @@ namespace Grupal
                 {
                     Console.WriteLine("Medicamento ya indicado");
                 }
-                Console.WriteLine("\nAgregar Otro Medicamento (s/n): ");
-                string opcion = Console.ReadLine()??"".ToLower()??"";
+                
                 bool runDos = true;
                 do
                 {
+                    Console.WriteLine("\nAgregar Otro Medicamento (s/n): ");
+                    string opcion = Console.ReadLine() ?? "".ToLower() ?? "";
                     if (opcion == "s")
                     {
                         run = true;

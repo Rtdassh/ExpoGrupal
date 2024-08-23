@@ -44,6 +44,19 @@ namespace Grupal
             Medico agregarMedico = new Medico(idMedico, nombreMedico, direccionMedico, fechaNacimiento, numeroMedico, especialidad);
             listaMedicos.Add(agregarMedico);
         }
+        public override void MostrarDetalles(List<Persona> personaList)
+        {
+            foreach (var persona in personaList)
+            {
+                if (persona is Medico)
+                {
+                    persona.Mostrar();
+                    Console.WriteLine("");
+                    Console.WriteLine("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
+                }
+            }
+        }
+
         public override void Mostrar()
         {
             base.Mostrar();

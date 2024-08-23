@@ -19,6 +19,9 @@ namespace Grupal
 
         public virtual string CrearID() => "";
         public virtual string GetID() => ID;
+        List<Tratamiento> hola = new List<Tratamiento>();
+        public virtual List<Tratamiento> GetList() => hola;
+
 
         public Persona(string iD, string nombre, string direccion, DateTime fechaNacimiento, string numeroTelefonico)
         {
@@ -28,27 +31,10 @@ namespace Grupal
             FechaNacimiento = fechaNacimiento;
             NumeroTelefonico = numeroTelefonico;
         }
-        public void MostrarDetalles(List<Persona> personaList)
-        {
-            if (personaList.Count == 0)
-            {
-                Console.WriteLine("No hay Datos Añadidos");
-            }
-            else
-            {
-                foreach (var persona in personaList)
-                {
-                    persona.Mostrar();
-                    Console.WriteLine("");
-                    Console.WriteLine("¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
-                }
-
-            }
-        }
+        public virtual void  MostrarDetalles(List<Persona> personaList){}
         public virtual void Mostrar()
         {
             Console.WriteLine($"Paciente No.{ID}\nNombre: {Nombre}\nDirección: {Direccion}\nFecha de Nacimiento: {FechaNacimiento}\nNúmero Telefónico: {NumeroTelefonico}");
-
         }
 
     }
