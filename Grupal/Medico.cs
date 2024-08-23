@@ -38,6 +38,10 @@ namespace Grupal
             Medico agregarMedico = new Medico(idMedico, nombreMedico, direccionMedico, fechaMedico, numeroMedico, especialidad);
             listaMedicos.Add(agregarMedico);
         }
-        
+        public override void Mostrar()
+        {
+            base.Mostrar();
+            Console.WriteLine($"Especialidad: {Especialidad}");
+        }
     }
 }
