@@ -108,7 +108,7 @@ void consultarListado(List<Persona> personas, List<Tratamiento> listadoTratamien
                 if (usuario is Paciente)
                 {
                     Console.WriteLine("---------------------------------------------------");
-                    Console.WriteLine($"ID: {usuario.ID} ");
+                    Console.WriteLine($"ID: {usuario.Nombre} ");
                     Console.WriteLine("---------------------------------------------------");
                     Console.WriteLine();
                 }

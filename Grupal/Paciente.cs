@@ -9,9 +9,9 @@ namespace Grupal
     internal class Paciente : Persona
     {
         int cantidadID = 0;
-        public List<Persona> ListadoPaciente { get; set; }
+        public List<Tratamiento> ListadoPaciente { get; set; }
 
-        public Paciente(string iD, string nombre, string direccion, DateTime fechaNacimiento, string numeroTelefonico, List<Persona> listadoPaciente) : base(iD, nombre, direccion, fechaNacimiento, numeroTelefonico)
+        public Paciente(string iD, string nombre, string direccion, DateTime fechaNacimiento, string numeroTelefonico, List<Tratamiento> listadoPaciente) : base(iD, nombre, direccion, fechaNacimiento, numeroTelefonico)
         {
             ListadoPaciente = listadoPaciente;
         }
