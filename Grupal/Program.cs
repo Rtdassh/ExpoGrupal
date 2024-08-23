@@ -87,7 +87,7 @@ void Menu(List<Persona> personas, List<Tratamiento> listadoTratamientos, List<Ci
                 agregarPersona(personas);
                 break;
             case 2:
-                //programarCita();
+                citaMedicaBase.AgregarCita(personas, listadoCitas);
                 break;
             case 3:
                 consultarListado(personas, listadoTratamientos, listadoCitas);

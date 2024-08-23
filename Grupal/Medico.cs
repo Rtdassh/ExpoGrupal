@@ -9,6 +9,7 @@ namespace Grupal
     internal class Medico : Persona
     {
         int cantidadID = 0;
+        
         public string Especialidad { get; set; }
 
         public Medico(string iD, string nombre, string direccion, DateTime fechaNacimiento, string numeroTelefonico, string especialidad) : base(iD, nombre, direccion, fechaNacimiento, numeroTelefonico)
@@ -16,7 +17,7 @@ namespace Grupal
             Especialidad = especialidad;
         }
 
-        public override string CrearID(ref int cantidadID)
+        public override string CrearID()
         {
             cantidadID++;
             return "A" + cantidadID;
@@ -25,7 +26,7 @@ namespace Grupal
 
         public void agregarMedico(List<Persona> listaMedicos)
         {
-            string idMedico = CrearID(ref cantidadID);
+            string idMedico = CrearID();
             Console.WriteLine("Ingrese el nombre del medico");
             string nombreMedico = Console.ReadLine() ?? "";
             Console.WriteLine("Ingrese la dirección del medico");
