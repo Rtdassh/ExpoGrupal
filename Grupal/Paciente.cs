@@ -19,16 +19,18 @@ namespace Grupal
         public void agregarPaciente(List<Persona> listaPacientes)
         {
             Console.Clear();
+            Console.WriteLine("--- AGREGAR PACIENTE ---");
             List<Tratamiento> ListadoNuevoPaciente = new List<Tratamiento>();
             string nuevoId = CrearID();
             Console.WriteLine("Ingrese el nombre del nuevo paciente:");
+
             string nuevoNombre = Console.ReadLine()??"";
-            Console.WriteLine("Ingrese la dirección del paciente:");
+            Console.WriteLine("Ingrese la dirección del paciente: ");
             string nuevaDireccion = Console.ReadLine() ?? "";
-            Console.WriteLine("Ingrese el año de nacimiento:");
+            Console.Write("Ingrese el año de nacimiento: ");
             int nuevaFecha = int.Parse(Console.ReadLine() ?? "");
             DateTime fechaNacimiento = new DateTime(nuevaFecha);
-            Console.WriteLine("Ingrese el número de teléfono del paciente:");
+            Console.Write("Ingrese el número de teléfono del paciente: ");
             string nuevoNumero = Console.ReadLine() ?? "";
 
             Paciente agregarPaciente = new Paciente(nuevoId, nuevoNombre, nuevaDireccion, fechaNacimiento, nuevoNumero, ListadoNuevoPaciente);

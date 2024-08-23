@@ -26,16 +26,20 @@ namespace Grupal
 
         public void agregarMedico(List<Persona> listaMedicos)
         {
+
+            Console.Clear();
+            Console.WriteLine("--- AGREGAR MÉDICO ---");
             string idMedico = CrearID();
-            Console.WriteLine("Ingrese el nombre del medico");
+            Console.Write("Ingrese el nombre del médico: ");
+
             string nombreMedico = Console.ReadLine() ?? "";
-            Console.WriteLine("Ingrese la dirección del medico");
+            Console.Write("Ingrese la dirección del médico: ");
             string direccionMedico = Console.ReadLine() ?? "";
-            Console.WriteLine("Ingrese la fecha de nacimiento");
+            Console.Write("Ingrese la fecha de nacimiento: ");
             DateTime fechaMedico = DateTime.Now;
-            Console.WriteLine("Ingrese el nombre del número de telefono");
+            Console.Write("Ingrese el número de teléfono: ");
             string numeroMedico = Console.ReadLine() ?? "";
-            Console.WriteLine("Ingrese la especialidad del medico");
+            Console.Write("Ingrese la especialidad del médico: ");
             string especialidad = Console.ReadLine() ?? "";
             Medico agregarMedico = new Medico(idMedico, nombreMedico, direccionMedico, fechaMedico, numeroMedico, especialidad);
             listaMedicos.Add(agregarMedico);
